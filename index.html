@@ -298,8 +298,9 @@
 			.footer-media {
 			    display: flex;
 			    gap: 20px;
-				word-wrap: break-word; /* ensures long words break */
-  				overflow-wrap: break-word;
+				flex-wrap: wrap; /* allows items to wrap to a new line */
+				gap: 10px;        /* optional spacing between icons */
+				justify-content: center; /* optional: center alignment */
 			}
 
 			.footer-media a {
