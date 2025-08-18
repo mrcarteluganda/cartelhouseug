@@ -208,14 +208,10 @@
 			<div class="card">
 				<h3>Edible <span style="color: darkred;">Cannabis</span> Sweets🍬</h3>
 				<h5>
-					[ 1 Sweet - UGX 20,000 ]<br />
-					Transport Inclusive
+					[ 10 Sweets - UGX 50,000 ]<br />
 				</h5>
-				<h5>
-					[ 2 Sweets - UGX 45,000 ]<br />
-					Transport Exclusive
-				</h5>
-				<h5>We Deliver To Your Doorstep</h5>
+			
+				<h5>Send a safeboda to pickup your package</h5>
 				<img src="CHUsweet-min.png" alt="Weed Sweets" onclick="openPopup('popup1')" />
 			</div>
 
@@ -223,15 +219,23 @@
 			<div class="card">
 				<h3>Edible <span style="color: darkred;">Cannabis</span> Biscuits🍪</h3>
 				<h5>
-					[ 1 Daddies - UGX 30,000 ]<br />
-					Transport Inclusive
+					[ 10 Daddies - UGX 50,000 ]<br />
+					
 				</h5>
-				<h5>
-					[ 2 Daddies - UGX 50,000 ]<br />
-					Transport Exclusive
-				</h5>
-				<h5>We Deliver To Your Doorstep</h5>
+				
+				<h5>Send a safeboda to pickup your package</h5>
 				<img style="height: 150px; object-fit: contain;" src="CHUdaddies.png" alt="Weed Daddies" onclick="openPopup('popup2')" />
+			</div>
+
+            <!-- Pills Product -->
+			<div class="card">
+				<h3>Edible <span style="color: darkred;">Cannabis</span> Pills🍪</h3>
+				<h5>
+					[ 5 Pills - UGX 50,000 ]<br />
+				</h5>
+				
+				<h5>Send a safeboda to pickup your package</h5>
+				<img style="height: 150px; object-fit: contain;" src="CHUpills.png" alt="Weed Daddies" onclick="openPopup('popup3')" />
 			</div>
 		</div>
 
@@ -258,7 +262,7 @@
 				<h4>Indica biscuits – A Heavier Ride!</h4>
 				<p>
 					🍪 Big crunchy cannabis-infused biscuits designed for stronger and longer lasting experiences. Best for deep relaxation on a nice free fun or boring weekend! <br />
-					<b>(--6 hours--) Of Maximum High</b>
+					<b>(--3 hours--) Of Maximum High</b>
 				</p>
 				<ul>
 					<li>✅ Potent full-body relaxation</li>
@@ -268,7 +272,23 @@
 				<p>Open weekdays 8:00AM - 5:00PM via WhatsApp orders.</p>
 			</div>
 
-			<div class="popup" id="popup3" style="display: none;">
+            <div class="popup" id="popup3" style="display: none;">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h4>Cannabis Pills – Discreet High, Anytime!</h4>
+                <p>
+                    💊 Perfect for those who prefer a simple, smoke-free, and discreet way to enjoy cannabis. Small but powerful, effects kick in gradually and last longer than edibles.<br />
+                    <b>(--6 hours--) Of Steady High</b><br />
+                    Ideal for relaxation, sleep, or stress relief.
+                </p>
+                <ul>
+                    <li>✅ Easy to carry & consume</li>
+                    <li>✅ No smell, discreet use</li>
+                    <li>✅ Smooth, long-lasting effects</li>
+                </ul>
+                <p>Open weekdays 8:00AM - 5:00PM via WhatsApp orders.</p>
+            </div>
+
+			<div class="popup" id="popup4" style="display: none;">
 				<span class="close" onclick="closePopup()">&times;</span>
 				<li>Best During Sex (The satisfaction never ends & Better replacement for Viagar coz even when you bust a nutt 🥜🥜. Your dick won't go down.)</li>
 				<li>Best during Party vibes (You will dance like a pro for sure)</li>
@@ -357,6 +377,7 @@
 			  document.getElementById('popup1').style.display = 'none';
 			  document.getElementById('popup2').style.display = 'none';
 			  document.getElementById('popup3').style.display = 'none';
+              document.getElementById('popup4').style.display = 'none';
 			  document.getElementById(popupId).style.display = 'block';
 			}
 
