@@ -1,315 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>CartelHouseUg</title>
-	<link rel="shortcut icon" href="CHU.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-	<style>
-		/* Reset and base settings */
-		* {
-		  margin: 0;
-		  padding: 0;
-		  box-sizing: border-box;
-		}
-
-		body {
-		  font-family: 'Poppins', 'Segoe UI', sans-serif;
-		  background: #f0fdf0;
-		  padding: 20px;
-		  min-height: 100vh;
-		  display: flex;
-		  flex-direction: column;
-		  align-items: center;
-		  overflow-x: hidden;
-		}
-
-		header {
-		  text-align: center;
-		  margin-bottom: 30px;
-		}
-
-		header img {
-		  width: 120px;
-		  margin-bottom: 10px;
-		}
-
-		h1 {
-		  font-size: 2.2rem;
-		  color: green;
-		  margin-bottom: 5px;
-		}
-
-		h1 span {
-		  font-size: 0.9rem;
-		  color: darkgreen;
-		  display: block;
-		  margin-top: 5px;
-		}
-
-		.product-container {
-		  display: grid;
-		  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		  gap: 30px;
-		  width: 100%;
-		  max-width: 1200px;
-		  padding: 0 10px;
-		}
-
-		.card {
-		  background: white;
-		  border-radius: 20px;
-		  padding: 20px;
-		  text-align: center;
-		  box-shadow: 0 8px 20px rgba(0, 128, 0, 0.2);
-		  transition: transform 0.3s ease, box-shadow 0.3s ease;
-		  position: relative;
-		}
-
-		.card:hover {
-		  transform: translateY(-8px);
-		  box-shadow: 0 12px 25px rgba(0, 128, 0, 0.3);
-		}
-
-		.card img {
-		  width: 100%;
-		  max-width: 250px;
-		  height: auto;
-		  margin: 15px 0;
-		  cursor: pointer;
-		  border-radius: 15px;
-		  object-fit: cover;
-		}
-
-		.card h3 {
-		  color: darkgreen;
-		  margin-bottom: 10px;
-		}
-
-		.card h5 {
-		  margin-bottom: 10px;
-		  color: green;
-		  font-weight: 500;
-		}
-
-		/* Popup / Modal */
-		.overlay {
-		  position: fixed;
-		  top: 0; left: 0;
-		  width: 100%;
-		  height: 100%;
-		  background: rgba(0, 100, 0, 0.5);
-		  backdrop-filter: blur(8px);
-		  display: none;
-		  align-items: center;
-		  justify-content: center;
-		  z-index: 1000;
-		  animation: fadeIn 0.4s ease;
-		}
-
-		.popup {
-		  background: white;
-		  padding: 25px;
-		  border-radius: 20px;
-		  max-width: 350px;
-		  width: 90%;
-		  color: darkgreen;
-		  position: relative;
-		  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-		  animation: zoomIn 0.3s ease;
-		}
-
-		.popup h4 {
-		  margin-bottom: 15px;
-		}
-
-		.popup p, .popup ul {
-		  margin-bottom: 10px;
-		  font-size: 0.95rem;
-		}
-
-		.popup ul {
-		  padding-left: 20px;
-		}
-
-		.popup .close {
-		  position: absolute;
-		  top: 10px;
-		  right: 15px;
-		  font-size: 22px;
-		  cursor: pointer;
-		  color: red;
-		  font-weight: bold;
-		}
-
-		@keyframes fadeIn {
-		  from {opacity: 0;}
-		  to {opacity: 1;}
-		}
-
-		@keyframes zoomIn {
-		  from {transform: scale(0.8);}
-		  to {transform: scale(1);}
-		}
-
-		.footer {
-		    margin-top: auto;
-		    width: 100%;
-		    padding: 15px 0;
-		    display: grid;
-		}
-
-		.footer-media {
-		    display: flex;
-		    gap: 10px;
-		    justify-content: center;
-		    flex-wrap: wrap;
-		}
-
-		.footer-media a {
-		    background: white;
-		    color: green;
-		    outline: none;
-		    width: 45px;
-		    height: 45px;
-		    border: solid 3px rgba(0, 100, 0, 0.238);
-		    display: flex;
-		    text-decoration: none;
-		    justify-content: center;
-		    align-items: center;
-		    border-radius: 50%;
-		    font-size: 20px;
-		    transition: background 0.3s, transform 0.3s;
-		}
-
-		.footer-media a:hover {
-		    background: darkgreen;
-		    color: white;
-		    transform: scale(1.1);
-		}
-
-		@media (max-width: 600px) {
-		  h1 { font-size: 1.7rem; }
-		  .card { padding: 15px; }
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHU Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    .product-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 260px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+      position: relative;
+    }
+    .popup h4 {
+      margin-top: 0;
+      color: darkred;
+    }
+    .popup .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+    .popup ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+  </style>
 </head>
-
 <body>
-	<header>
-		<img src="CHU Transparent.png" alt="CartelHouseUg Logo" />
-		<h1>Welcome to Cartel House Uganda<span>Best Kampala Cannabis Edibles Plug</span></h1>
-	</header>
 
-	<div class="product-container">
-		<!-- Sweets Product -->
-		<div class="card">
-			<h3>Edible <span style="color: darkred;">Cannabis</span> Sweets🍬</h3>
-			<h5>[ 1 Sweet - UGX 20,000 ]<br />Transport Inclusive</h5>
-			<h5>[ 2 Sweets - UGX 45,000 ]<br />Transport Exclusive</h5>
-			<h5>We Deliver To Your Doorstep</h5>
-			<img src="CHUsweet-min.png" alt="Weed Sweets" onclick="openPopup('popup1')" />
-		</div>
+  <div class="product-container">
+    <!-- Sweets Product -->
+    <div class="card">
+      <h3>Edible <span style="color: darkred;">Cannabis</span> Sweets🍬</h3>
+      <h5>[ 1 Sweet - UGX 20,000 ]<br>Transport Inclusive</h5>
+      <h5>[ 2 Sweets - UGX 45,000 ]<br>Transport Exclusive</h5>
+      <h5>We Deliver To Your Doorstep</h5>
+      <img src="CHUsweet-min.png" alt="Weed Sweets" onclick="openPopup('popup1')">
+    </div>
 
-		<!-- Daddies Product -->
-		<div class="card">
-			<h3>Edible <span style="color: darkred;">Cannabis</span> Biscuits🍪</h3>
-			<h5>[ 1 Daddies - UGX 30,000 ]<br />Transport Inclusive</h5>
-			<h5>[ 2 Daddies - UGX 50,000 ]<br />Transport Exclusive</h5>
-			<h5>We Deliver To Your Doorstep</h5>
-			<img style="height: 150px; object-fit: contain;" src="CHUdaddies.png" alt="Weed Daddies" onclick="openPopup('popup2')" />
-		</div>
+    <!-- Daddies Product -->
+    <div class="card">
+      <h3>Edible <span style="color: darkred;">Cannabis</span> Biscuits🍪</h3>
+      <h5>[ 1 Daddies - UGX 30,000 ]<br>Transport Inclusive</h5>
+      <h5>[ 2 Daddies - UGX 50,000 ]<br>Transport Exclusive</h5>
+      <h5>We Deliver To Your Doorstep</h5>
+      <img src="CHUdaddies.png" alt="Weed Daddies" onclick="openPopup('popup2')">
+    </div>
 
-		<!-- Cannabis Pills Product -->
-		<div class="card">
-			<h3><span style="color: darkred;">Cannabis</span> Pills💊</h3>
-			<h5>[ 1 Pill - UGX 15,000 ]<br />Transport Inclusive</h5>
-			<h5>[ 5 Pills - UGX 60,000 ]<br />Transport Exclusive</h5>
-			<h5>Discreet & Easy To Carry</h5>
-			<img style="height: 150px; object-fit: contain;" src="CHUpills.png" alt="Cannabis Pills" onclick="openPopup('popup4')" />
-		</div>
-	</div>
+    <!-- Cannabis Pills Product -->
+    <div class="card">
+      <h3><span style="color: darkred;">Cannabis</span> Pills💊</h3>
+      <h5>[ 1 Pill - UGX 15,000 ]<br>Transport Inclusive</h5>
+      <h5>[ 5 Pills - UGX 60,000 ]<br>Transport Exclusive</h5>
+      <h5>Discreet & Easy To Carry</h5>
+      <img src="CHUpills.png" alt="Cannabis Pills" onclick="openPopup('popup4')">
+    </div>
+  </div>
 
-	<!-- Popup Overlay -->
-	<div class="overlay" id="overlay">
-		<!-- Popup 1 -->
-		<div class="popup" id="popup1">
-			<span class="close" onclick="closePopup()">&times;</span>
-			<h4>Indica Sweets – Relaxation in Every Bite!</h4>
-			<p>🍬 Tasty with ultimate relaxation. Infused with Indica strains for mind and body relief.<br><b>(--3 hours--) Of Maximum High</b>.</p>
-			<ul>
-				<li>✅ Deep relaxation</li>
-				<li>✅ Stress relief</li>
-				<li>✅ Enhances sleep</li>
-			</ul>
-		</div>
+  <!-- Overlay + Popups -->
+  <div class="overlay" id="overlay">
+    <!-- Sweets Popup -->
+    <div class="popup" id="popup1" style="display: none;">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h4>Cannabis Sweets – Fun & Tasty High</h4>
+      <p>
+        🍬 Delicious cannabis-infused sweets with a smooth, gradual high.<br>
+        Perfect for relaxing evenings, social vibes, and stress relief.
+      </p>
+      <ul>
+        <li>✅ Sweet & discreet</li>
+        <li>✅ Strong & long-lasting</li>
+        <li>✅ Great for sharing</li>
+      </ul>
+      <p>Open weekdays 8:00AM - 5:00PM via WhatsApp orders.</p>
+    </div>
 
-		<!-- Popup 2 -->
-		<div class="popup" id="popup2" style="display: none;">
-			<span class="close" onclick="closePopup()">&times;</span>
-			<h4>Indica Biscuits – A Heavier Ride!</h4>
-			<p>🍪 Big crunchy cannabis biscuits for stronger, longer highs.<br><b>(--6 hours--) Of Maximum High</b></p>
-			<ul>
-				<li>✅ Potent relaxation</li>
-				<li>✅ Long-lasting</li>
-				<li>✅ Crunchy & delicious</li>
-			</ul>
-		</div>
+    <!-- Daddies Popup -->
+    <div class="popup" id="popup2" style="display: none;">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h4>Cannabis Biscuits – Crunchy & Potent</h4>
+      <p>
+        🍪 A tasty biscuit with the calming effects of cannabis.<br>
+        Slow-release high keeps you relaxed for hours.
+      </p>
+      <ul>
+        <li>✅ Crunchy texture</li>
+        <li>✅ Long-lasting high</li>
+        <li>✅ Perfect for tea time</li>
+      </ul>
+      <p>Open weekdays 8:00AM - 5:00PM via WhatsApp orders.</p>
+    </div>
 
-		<!-- Popup 3 -->
-		<div class="popup" id="popup3" style="display: none;">
-			<span class="close" onclick="closePopup()">&times;</span>
-			<li>Best during sex – endless satisfaction</li>
-			<li>Best for parties – you’ll dance like a pro</li>
-			<li>Best for stress relief</li>
-			<li>Deepest sleep ever</li>
-			<li>Boosts imagination & vibes</li>
-			<li>Music feels divine</li>
-			<p><b>ORDER NOW. 🍀</b></p>
-		</div>
+    <!-- Pills Popup -->
+    <div class="popup" id="popup4" style="display: none;">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h4>Cannabis Pills – Discreet High, Anytime!</h4>
+      <p>
+        💊 Perfect for those who prefer a simple, smoke-free, and discreet way to enjoy cannabis.<br>
+        Effects kick in gradually and last longer than edibles.
+      </p>
+      <ul>
+        <li>✅ Easy to carry & consume</li>
+        <li>✅ No smell, discreet use</li>
+        <li>✅ Smooth, long-lasting effects (4-6 hrs)</li>
+      </ul>
+      <p>Open weekdays 8:00AM - 5:00PM via WhatsApp orders.</p>
+    </div>
+  </div>
 
-		<!-- Popup 4 (Cannabis Pills) -->
-		<div class="popup" id="popup4" style="display: none;">
-			<span class="close" onclick="closePopup()">&times;</span>
-			<h4>Cannabis Pills – Discreet High, Anytime!</h4>
-			<p>💊 Smoke-free and discreet. Gradual, long-lasting effects.<br><b>(--4-6 hours--) Of Steady High</b></p>
-			<ul>
-				<li>✅ Easy to carry & consume</li>
-				<li>✅ No smell, discreet use</li>
-				<li>✅ Smooth, long-lasting effects</li>
-			</ul>
-		</div>
-	</div>
+  <script>
+    function openPopup(popupId) {
+      document.getElementById('overlay').style.display = 'flex';
+      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+      document.getElementById(popupId).style.display = 'block';
+    }
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="footer-media">
-			<a href="mailto:cartelhouseug@gmail.com"><i class="fas fa-envelope"></i></a>
-			<a href="https://www.instagram.com/cartelhouseug" target="_blank"><i class="fab fa-instagram"></i></a>
-			<a href="https://x.com/CartelHouseUG" target="_blank"><i class="fab fa-x-twitter"></i></a>
-			<a href="https://wa.me/+256745719933" target="_blank"><i class="fab fa-whatsapp"></i></a>
-			<a href="tel:+256745719933"><i class="fas fa-phone"></i></a>
-			<a href="https://www.linkedin.com/company/cartelhouseug" target="_blank"><i class="fab fa-linkedin"></i></a>
-			<a href="https://www.facebook.com/people/Cartel-House-Uganda/61575724718826/" target="_blank"><i class="fab fa-facebook"></i></a>
-		</div>
-	</footer>
-
-	<!-- Popup Script -->
-	<script>
-		function openPopup(popupId) {
-		  document.getElementById('overlay').style.display = 'flex';
-		  document.getElementById('popup1').style.display = 'none';
-		  document.getElementById('popup2').style.display = 'none';
-		  document.getElementById('popup3').style.display = 'none';
-		  document.getElementById('popup4').style.display = 'none'; // NEW
-		  document.getElementById(popupId).style.display = 'block';
-		}
-
-		function closePopup() {
-		  document.getElementById('overlay').style.display = 'none';
-		}
-	</script>
 </body>
 </html>
