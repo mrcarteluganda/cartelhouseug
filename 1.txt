@@ -1,0 +1,22 @@
+<!-- Sweets Product -->
+			<div class="card">
+				<h3>Edible <span style="color: darkred;">Cannabis</span> Sweets🍬</h3>
+				<h5>
+					[ 10 Sweets - UGX 50,000 ] @ PACKET<br />
+				</h5>
+			
+				<h5>Send a safeboda to pickup your package</h5>
+				<img src="CHUsweet-min.png" alt="Weed Sweets" onclick="openPopup('popup1')" />
+			</div>
+
+			<!-- Daddies Product -->
+			<div class="card" >
+				<h3>Edible <span style="color: darkred;">Cannabis</span> Daddies🍪</h3>
+				<h5>
+					[ 10 Daddies - UGX 50,000 ] @ PACKET<br />
+					
+				</h5>
+				
+				<h5>Send a safeboda to pickup your package</h5>
+				<img style="height: 150px; object-fit: contain;" src="CHUdaddies.png" alt="Weed Daddies" onclick="openPopup('popup2')" />
+			</div>
